@@ -2,6 +2,7 @@ const Path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -34,6 +35,12 @@ module.exports = {
       inject: true,
       chunks: ['index'],
       filename: 'page.html'
+    }),
+
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ],
   resolve: {

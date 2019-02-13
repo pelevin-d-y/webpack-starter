@@ -1,7 +1,7 @@
 $body-color: blue;
 
 body {
-  color: red;
+  color: $body-color;
 
   background: url('../../public/images/111111.png') no-repeat center;
 }
